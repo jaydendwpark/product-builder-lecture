@@ -2,6 +2,29 @@
 const generateBtn = document.getElementById('generate-btn');
 const numbersContainer = document.querySelector('.numbers-container');
 const bonusContainer = document.querySelector('.bonus-container');
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Check for saved theme preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    body.classList.add(savedTheme);
+    if (savedTheme === 'dark') {
+        themeToggle.textContent = '☀️';
+    }
+}
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    if (body.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        themeToggle.textContent = '☀️';
+    } else {
+        localStorage.removeItem('theme');
+        themeToggle.textContent = '🌙';
+    }
+});
+
 
 generateBtn.addEventListener('click', () => {
     numbersContainer.innerHTML = '';

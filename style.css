@@ -85,3 +85,26 @@ h1 {
     background-color: #e64a19;
     transform: scale(1.05);
 }
+
+body.dark {
+    --background-color: #333;
+    --text-color: #f0f0f0;
+    --white: #444;
+    --primary-color: #FFC300;
+    --secondary-color: #FF5733;
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.2);
+}
